@@ -24,19 +24,22 @@ public class MenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {				
 				setContentView(R.layout.mainview);
-				backbuttonenable();
-
+				backbuttonenable();			
+				
+				
+				// Information
+				Information i = new Information();
+				i.setRacerName("kramer");
+				i.setDistance(500);
 				
 				// Init new match
-				Match m = new Match("kramer", 500);
+				Match m = new Match(i);
 				
 				// Start match
-				new Thread(m).start();
+				new Thread(m).start();	
 				
-				// Receive time information
-				m.getTimes();
 				
-
+				
 				
 			}
 		});
