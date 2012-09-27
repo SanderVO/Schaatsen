@@ -24,8 +24,9 @@ public class MenuActivity extends Activity {
         new Thread(new Runnable() {
         	public void run() {
         		dbc = new DatabaseConn();
-        		setMessage(dbc.sendMsg("kramer 500"));
+        		dbc.sendMsg("kramer 500");
         		//while (getMessage()!="finished") {
+        			setMessage(dbc.getMsg());
                 	TextView t = (TextView) findViewById(R.id.TextViewDB);
                 	if (getMessage()!=t.getText().toString()) {
                     	Log.i("Msg", getMessage());
