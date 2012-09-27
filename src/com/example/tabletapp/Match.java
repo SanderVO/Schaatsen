@@ -38,6 +38,7 @@ public class Match implements Runnable {
 	
 	private void newTime(String line) {
 		times.add(new Time(line));
+		Log.i("tag", line);
 	}
 		
 	/**
