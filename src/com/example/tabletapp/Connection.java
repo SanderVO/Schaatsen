@@ -1,26 +1,27 @@
 package com.example.tabletapp;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.Socket;
 
-// Connection inner class
 class Connection {
 
-	private Socket sock;
-	private String host;
+	private final static String HOST = "10.0.2.2";
+	private final static int PORT = 9923;
+	
+	private Socket sock;	
 	private PrintWriter out;
 	private BufferedReader in;
-	private int port;
-	
-	public Connection(String host, int port) {		
-		this.host = host;
-		this.port = port;		
+		
+	public Connection() {		
 		openConnection();
 	}
 	
 	public void openConnection() {
-		try {
-			sock = new Socket(host, port);				
+		try {			
+			sock = new Socket(InetAddress.getByName(HOST), PORT);				
 			out = new PrintWriter(sock.getOutputStream(), true);			
 			in = new BufferedReader(new InputStreamReader(sock.getInputStream()));			
 		} catch (Exception e) {
