@@ -64,5 +64,17 @@ public class Information {
 	}
 	public void setBronzeGoal(int bronzeGoal) {
 		this.bronzeGoal = bronzeGoal;
+	}
+
+	@Override
+	public String toString() {
+		return "Information [racerName=" + racerName + ", opponentName="
+				+ opponentName + ", raceDescription=" + raceDescription
+				+ ", distance=" + distance + ", goldenGoal=" + goldenGoal
+				+ ", silverGoal=" + silverGoal + ", bronzeGoal=" + bronzeGoal
+				+ "]";
 	}	
+	
+	
+	
 }

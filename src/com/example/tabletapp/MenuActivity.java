@@ -2,6 +2,7 @@ package com.example.tabletapp;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -19,28 +20,13 @@ public class MenuActivity extends Activity {
 	}	
 
 	public void menubuttonenable(){
+		
 		Button buttonmain = (Button) findViewById(R.id.main);
 		buttonmain.setOnClickListener(new Button.OnClickListener(){
 			@Override
 			public void onClick(View v) {				
 				setContentView(R.layout.mainview);
-				backbuttonenable();			
-				
-				
-				// Information
-				Information i = new Information();
-				i.setRacerName("kramer");
-				i.setDistance(500);
-				
-				// Init new match
-				Match m = new Match(i);
-				
-				// Start match
-				new Thread(m).start();	
-				
-				
-				
-				
+				backbuttonenable();	
 			}
 		});
 		Button buttongoal = (Button) findViewById(R.id.goal);
@@ -63,11 +49,12 @@ public class MenuActivity extends Activity {
 		buttoncontrol.setOnClickListener(new Button.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.controlview);
-				backbuttonenable();
+				Intent i = new Intent(MenuActivity.this, ControlActivity.class);
+				startActivity(i);					
 			}
-		});
+		});		
 	}
+	
 	public void backbuttonenable(){
 		if(findViewById(R.id.back)!=null){
 			ImageButton buttonback = (ImageButton) findViewById(R.id.back);
@@ -80,6 +67,7 @@ public class MenuActivity extends Activity {
 			});
 		}
 	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_menu, menu);
