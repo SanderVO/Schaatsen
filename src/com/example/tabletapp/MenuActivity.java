@@ -3,12 +3,10 @@ package com.example.tabletapp;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class MenuActivity extends Activity {
 
@@ -41,8 +39,8 @@ public class MenuActivity extends Activity {
 		buttonraceinfo.setOnClickListener(new Button.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.raceinfoview);
-				backbuttonenable();
+				Intent i = new Intent(MenuActivity.this, RaceActivity.class);
+				startActivity(i);
 			}
 		});
 		Button buttoncontrol = (Button) findViewById(R.id.control);

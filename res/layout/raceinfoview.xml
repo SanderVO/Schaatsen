@@ -11,7 +11,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/TextView02"
+            android:id="@+id/raceInfoOppHeader"
             android:layout_width="297dp"
             android:layout_height="87dp"
             android:layout_column="0"
@@ -23,7 +23,7 @@
             android:textSize="@android:dimen/app_icon_size" />
 
         <TextView
-            android:id="@+id/TextView01"
+            android:id="@+id/raceInfoDisHeader"
             android:layout_width="97dp"
             android:layout_height="wrap_content"
             android:layout_column="0"
@@ -35,7 +35,7 @@
             android:textSize="@android:dimen/app_icon_size" />
 
         <TextView
-            android:id="@+id/TextView04"
+            android:id="@+id/raceInfoRaceHeader"
             android:layout_width="266dp"
             android:layout_height="87dp"
             android:layout_column="0"
@@ -46,26 +46,26 @@
             android:textSize="@android:dimen/app_icon_size" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/raceInfoOpp"
             android:layout_width="266dp"
             android:layout_height="87dp"
             android:layout_column="1"
             android:layout_gravity="right"
             android:layout_row="1"
             android:layout_rowSpan="3"
-            android:text="Kurt russel"
+            android:text="-"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="@android:dimen/app_icon_size" />
 
         <TextView
-            android:id="@+id/TextView03"
+            android:id="@+id/raceInfoDis"
             android:layout_width="266dp"
             android:layout_height="87dp"
             android:layout_column="1"
             android:layout_gravity="right"
             android:layout_row="3"
             android:layout_rowSpan="3"
-            android:text="765.66m"
+            android:text="-"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="@android:dimen/app_icon_size" />
 
@@ -129,7 +129,7 @@
             android:layout_row="5" />
 
         <TextView
-            android:id="@+id/TextView05"
+            android:id="@+id/raceInfoRace"
             android:layout_width="266dp"
             android:layout_height="87dp"
             android:layout_column="1"

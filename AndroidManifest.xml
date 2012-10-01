@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ControlActivity"></activity>
+        <activity android:name=".RaceActivity"></activity>
                  
     </application>
 
