@@ -107,6 +107,37 @@ public class Match implements Runnable {
 			return info.getBronzeGoal();
 		}
 	}
+	
+	public String createMatchTime(int milliseconds)
+	{
+		int totalSeconds = milliseconds / 1000;
+		int minutes = totalSeconds / 60;
+		int seconds = totalSeconds % 60;
+		int hundreds;
+		hundreds = milliseconds - (minutes * 60 * 1000) - (seconds * 1000);
+		String returnString = "";
+		if (minutes < 10) {
+			returnString += "0" + minutes;
+		}
+		else {
+			returnString += minutes;
+		}
+		returnString += ":";
+		if (seconds < 10) {
+			returnString += "0" + seconds;
+		}
+		else {
+			returnString += seconds;
+		}
+		returnString += ":";
+		if (hundreds < 10) {
+			returnString += "0" + hundreds;
+		}
+		else {
+			returnString += hundreds;
+		}
+		return returnString;
+	}
 		
 	/**
 	 * Round time information

@@ -35,17 +35,19 @@ public class GoalActivity extends Activity {
 	public void showRaceGoal() {
 		Match match = Match.getInstance();
 		
-		int currentTime = match.getCurrentTime();
-		Log.i("GoalActivity", Integer.toString(currentTime));
+		//int currentTime = match.getCurrentTime();
+		//Log.i("GoalActivity", Integer.toString(currentTime));
 		//int goalTime = match.getGoalTime(this.goal);
-		/*int differenceTime = goalTime - currentTime;
+		int currentTime = 240000;
+		int goalTime = 260000;
+		int differenceTime = goalTime - currentTime;
 		
 		TextView currentTimeView = (TextView) findViewById(R.id.textView1);
-		currentTimeView.setText(Integer.toString(currentTime));
+		currentTimeView.setText(match.createMatchTime(currentTime));
 		TextView differenceView = (TextView) findViewById(R.id.TextView03);
-		differenceView.setText(Integer.toString(differenceTime));
+		differenceView.setText(match.createMatchTime(differenceTime));
 		TextView goalTimeView = (TextView) findViewById(R.id.TextView05); 
-		goalTimeView.setText(Integer.toString(goalTime));*/
+		goalTimeView.setText(match.createMatchTime(goalTime));
 		
 		
 	}
