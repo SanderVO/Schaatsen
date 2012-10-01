@@ -95,6 +95,18 @@ public class Match implements Runnable {
 	public int getCurrentTime() {
 		return currentTime;
 	}
+	
+	public int getGoalTime(int place) {
+		if(place == 1) {
+			return info.getGoldenGoal();
+		} 
+		else if (place == 2) {
+			return info.getSilverGoal();
+		}
+		else {
+			return info.getBronzeGoal();
+		}
+	}
 		
 	/**
 	 * Round time information

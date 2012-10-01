@@ -32,6 +32,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".RaceActivity"></activity>
+		<activity android:name=".GoalActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
