@@ -133,6 +133,9 @@ public class Match implements Runnable {
 		if (hundreds < 10) {
 			returnString += "0" + hundreds;
 		}
+		else if (hundreds > 100) {
+			returnString += new Integer(hundreds).toString().substring(0, 2);
+		}
 		else {
 			returnString += hundreds;
 		}

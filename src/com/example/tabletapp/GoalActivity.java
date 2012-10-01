@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Random;
 
 /**
  *
@@ -32,14 +33,22 @@ public class GoalActivity extends Activity {
 		this.showRaceGoal();
 	}
 	
+	@Override
+	public void onResume()
+	{
+		super.onResume();
+		this.showRaceGoal();
+	}
+		
 	public void showRaceGoal() {
 		Match match = Match.getInstance();
 		
 		//int currentTime = match.getCurrentTime();
 		//Log.i("GoalActivity", Integer.toString(currentTime));
 		//int goalTime = match.getGoalTime(this.goal);
-		int currentTime = 240000;
-		int goalTime = 260000;
+		Random random = new Random();
+		int currentTime = random.nextInt(999999);
+		int goalTime = random.nextInt(999999);
 		int differenceTime = goalTime - currentTime;
 		
 		TextView currentTimeView = (TextView) findViewById(R.id.textView1);
@@ -73,6 +82,7 @@ public class GoalActivity extends Activity {
 					else {
 						goalButton.setImageResource(R.drawable.bronze);
 					}
+					showRaceGoal();
 				}
 			});
 		}
