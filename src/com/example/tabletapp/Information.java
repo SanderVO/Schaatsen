@@ -10,7 +10,7 @@ public class Information {
 	private int silverGoal;
 	private int bronzeGoal;
 	
-	public Information() {		
+	public Information() {
 	}	
 	
 	public Information(String racerName, String opponentName, String raceDescription, int distance, int goldenGoal, int silverGoal, int bronzeGoal) {
