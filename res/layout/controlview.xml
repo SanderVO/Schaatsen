@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".ItemDetailActivity" >
+    tools:context=".ControlActivity" >
 
     <ImageButton
         android:id="@+id/back"
@@ -12,10 +12,17 @@
         android:layout_height="24dp"
         android:src="@drawable/back" />
 
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@+string/Opponent"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <GridLayout
-        android:layout_width="424dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="7"
+        android:columnCount="6"
         android:contentDescription="NL"
         android:orientation="vertical" >
 
@@ -31,9 +38,11 @@
 
         <TextView
             android:id="@+id/textView1"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_gravity="left"
-            android:layout_row="3"
+            android:layout_row="4"
             android:text="Distance"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -41,53 +50,58 @@
             android:id="@+id/TextView02"
             android:layout_height="wrap_content"
             android:layout_column="0"
-            android:layout_columnSpan="2"
-            android:layout_gravity="left"
+            android:layout_gravity="left|bottom"
             android:layout_row="6"
-            android:layout_rowSpan="2"
             android:text="Opponent"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/TextView01"
             android:layout_column="0"
-            android:layout_columnSpan="2"
-            android:layout_gravity="left"
-            android:layout_row="8"
+            android:layout_gravity="left|bottom"
+            android:layout_row="7"
             android:text="Race description"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/TextView03"
             android:layout_column="0"
-            android:layout_columnSpan="2"
-            android:layout_gravity="left"
-            android:layout_row="11"
+            android:layout_gravity="left|bottom"
+            android:layout_row="10"
             android:text="Golden goal"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/TextView04"
             android:layout_column="0"
-            android:layout_gravity="left"
-            android:layout_row="12"
+            android:layout_gravity="left|bottom"
+            android:layout_row="11"
             android:text="Silver goal"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
             android:id="@+id/TextView05"
             android:layout_column="0"
-            android:layout_gravity="left"
-            android:layout_row="13"
+            android:layout_gravity="left|bottom"
+            android:layout_row="12"
             android:text="Bronze goal"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Button
+            android:id="@+id/submitcontrol"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_column="0"
+            android:layout_gravity="left|bottom"
+            android:layout_row="13"
+            android:text="Submit" />
 
         <EditText
             android:id="@+id/opponent"
             android:layout_column="2"
             android:layout_columnSpan="3"
             android:layout_gravity="right"
-            android:layout_row="6"
+            android:layout_row="5"
             android:layout_rowSpan="2"
             android:ems="10"
             android:inputType="textPersonName" />
@@ -97,16 +111,9 @@
             android:layout_column="2"
             android:layout_columnSpan="3"
             android:layout_gravity="right"
-            android:layout_row="8"
+            android:layout_row="7"
             android:ems="10"
-            android:inputType="textShortMessage" />"
-
-        <Button
-            android:id="@+id/submitcontrol"
-            android:layout_column="2"
-            android:layout_gravity="right"
-            android:layout_row="14"
-            android:text="Submit" />
+            android:inputType="textShortMessage" />
 
         <EditText
             android:id="@+id/racerName"
@@ -116,48 +123,16 @@
             android:layout_row="1"
             android:layout_rowSpan="2"
             android:ems="10"
-            android:inputType="textPersonName" />        
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/distance"
             android:layout_column="4"
-            android:layout_gravity="left"
+            android:layout_gravity="left|bottom"
             android:layout_row="3"
+            android:layout_rowSpan="2"
             android:ems="10"
-            android:inputType="number" >
-
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/EditText03"
-            android:layout_width="48dp"
-            android:layout_column="5"
-            android:layout_columnSpan="2"
-            android:layout_gravity="left"
-            android:layout_row="5"
-            android:layout_rowSpan="3"
-            android:ems="10"
-            android:text="NL" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_column="5"
-            android:layout_gravity="left"
-            android:layout_row="9"
-            android:layout_rowSpan="4" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_column="5"
-            android:layout_gravity="left"
-            android:layout_row="12" />
-
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_column="5"
-            android:layout_gravity="left"
-            android:layout_row="13" />
+            android:inputType="number" />
 
         <Space
             android:layout_width="1dp"
@@ -181,7 +156,7 @@
             android:id="@+id/goldGoal"
             android:layout_column="4"
             android:layout_gravity="right"
-            android:layout_row="9"
+            android:layout_row="8"
             android:layout_rowSpan="3"
             android:ems="10"
             android:inputType="number" />
@@ -190,7 +165,7 @@
             android:id="@+id/silverGoal"
             android:layout_column="4"
             android:layout_gravity="left"
-            android:layout_row="12"
+            android:layout_row="11"
             android:ems="10"
             android:inputType="number" />
 
@@ -198,21 +173,9 @@
             android:id="@+id/bronzeGoal"
             android:layout_column="4"
             android:layout_gravity="left"
-            android:layout_row="13"
+            android:layout_row="12"
             android:ems="10"
-            android:inputType="number" />        
-        
-        <Space
-            android:layout_width="26dp"
-            android:layout_height="1dp"
-            android:layout_column="5"
-            android:layout_row="0" />
-
-        <Space
-            android:layout_width="99dp"
-            android:layout_height="1dp"
-            android:layout_column="6"
-            android:layout_row="0" />
+            android:inputType="number" />
 
         <Space
             android:layout_width="1dp"
@@ -230,31 +193,31 @@
             android:layout_width="1dp"
             android:layout_height="8dp"
             android:layout_column="0"
-            android:layout_row="9" />
+            android:layout_row="8" />
 
         <Space
             android:layout_width="1dp"
             android:layout_height="8dp"
             android:layout_column="0"
-            android:layout_row="12" />
+            android:layout_row="11" />
 
         <Space
             android:layout_width="1dp"
             android:layout_height="14dp"
             android:layout_column="0"
-            android:layout_row="11" />
+            android:layout_row="10" />
 
         <Space
             android:layout_width="1dp"
             android:layout_height="40dp"
             android:layout_column="0"
-            android:layout_row="13" />
+            android:layout_row="12" />
 
         <Space
             android:layout_width="1dp"
             android:layout_height="73dp"
             android:layout_column="0"
-            android:layout_row="14" />
+            android:layout_row="13" />
 
         <Space
             android:layout_width="16dp"
@@ -263,7 +226,7 @@
             android:layout_row="0" />
 
         <Space
-            android:layout_width="118dp"
+            android:layout_width="167dp"
             android:layout_height="1dp"
             android:layout_column="1"
             android:layout_row="0" />
@@ -281,13 +244,31 @@
             android:layout_row="0" />
 
         <Space
-            android:layout_width="209dp"
+            android:layout_width="170dp"
             android:layout_height="1dp"
             android:layout_column="4"
             android:layout_row="0" />
 
         <Space
+            android:layout_width="2dp"
+            android:layout_height="1dp"
+            android:layout_column="5"
+            android:layout_row="0" />
+
+        <Space
             android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="11" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="14dp"
             android:layout_column="0"
             android:layout_row="12" />
 
@@ -295,47 +276,239 @@
             android:layout_width="100dp"
             android:layout_height="21dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="14dp"
             android:layout_column="0"
-            android:layout_row="13" />
+            android:layout_row="12" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="21dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="14dp"
             android:layout_column="0"
-            android:layout_row="13" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="12" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="14dp"
             android:layout_column="0"
-            android:layout_row="13" />
+            android:layout_row="12" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="14dp"
             android:layout_column="0"
+            android:layout_row="12" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="12" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="12" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="12" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="12" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="12" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
             android:layout_row="13" />
 
         <Space
             android:layout_width="100dp"
-            android:layout_height="14dp"
+            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
             android:layout_column="0"
             android:layout_row="13" />
 
@@ -343,29 +516,15 @@
             android:layout_width="100dp"
             android:layout_height="21dp"
             android:layout_column="0"
-            android:layout_row="13" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
-            android:layout_height="21dp"
             android:layout_column="0"
-            android:layout_row="13" />
+            android:layout_row="9" />
 
         <Space
             android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="13" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
             android:layout_column="0"
             android:layout_row="13" />
 
@@ -373,11 +532,15 @@
             android:layout_width="100dp"
             android:layout_height="21dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
-            android:layout_height="21dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
             android:layout_column="0"
             android:layout_row="13" />
 
@@ -385,302 +548,318 @@
             android:layout_width="100dp"
             android:layout_height="21dp"
             android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="9" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="21dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
+            android:layout_row="13" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="36dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="10" />
+            android:layout_row="9" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="14" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="36dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
+            android:layout_row="13" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="36dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="10" />
+            android:layout_row="9" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="14" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_height="36dp"
-            android:layout_column="0"
-            android:layout_row="7" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="10" />
-
-        <Space
-            android:layout_width="100dp"
-            android:layout_column="0"
-            android:layout_row="14" />
+            android:layout_row="13" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="36dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="10" />
+            android:layout_row="9" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="14" />
+            android:layout_row="13" />
 
         <Space
             android:layout_width="100dp"
             android:layout_height="36dp"
             android:layout_column="0"
-            android:layout_row="7" />
+            android:layout_row="6" />
 
         <Space
             android:layout_width="100dp"
             android:layout_column="0"
-            android:layout_row="10" />
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="13" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="13" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_column="0"
+            android:layout_row="6" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_column="0"
+            android:layout_row="9" />
+
+        <Space
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_row="9" />
     </GridLayout>
 
 </FrameLayout>
