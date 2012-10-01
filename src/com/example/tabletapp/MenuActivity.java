@@ -25,8 +25,8 @@ public class MenuActivity extends Activity {
 		buttonmain.setOnClickListener(new Button.OnClickListener(){
 			@Override
 			public void onClick(View v) {				
-				setContentView(R.layout.mainview);
-				backbuttonenable();	
+				Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+				startActivity(intent);
 			}
 		});
 		Button buttongoal = (Button) findViewById(R.id.goal);

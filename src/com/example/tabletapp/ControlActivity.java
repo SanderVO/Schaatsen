@@ -28,14 +28,14 @@ public class ControlActivity extends Activity {
 		buttonback.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(ControlActivity.this, MenuActivity.class);
-				startActivity(i);				
+				startActivity(i);
 			}
 		});
 		buttonsubmit.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 				postForm();
 			}
-		});		
+		});
 	}
 	
 	private void postForm() {
@@ -43,20 +43,26 @@ public class ControlActivity extends Activity {
 		// Make new information instance
 		Information info = new Information();
 		
-		EditText racerName = (EditText)findViewById(R.id.EditText02);
+		EditText racerName = (EditText)findViewById(R.id.racerName);
 		info.setRacerName(racerName.getText().toString());
 		
-		EditText distance = (EditText)findViewById(R.id.editText1);
+		EditText distance = (EditText)findViewById(R.id.distance);
 		info.setDistance(Integer.parseInt(distance.getText().toString()));		
 		
-		EditText opponent = (EditText)findViewById(R.id.editText2);
+		EditText opponent = (EditText)findViewById(R.id.opponent);
 		info.setOpponentName(opponent.getText().toString());	
 				
-		EditText description = (EditText)findViewById(R.id.EditText01);
+		EditText description = (EditText)findViewById(R.id.description);
 		info.setRaceDescription(description.getText().toString());	
 		
-		EditText goldGoal = (EditText)findViewById(R.id.editText3);
+		EditText goldGoal = (EditText)findViewById(R.id.goldGoal);
 		info.setGoldenGoal(Integer.parseInt(goldGoal.getText().toString()));
+		
+		EditText silverGoal = (EditText)findViewById(R.id.silverGoal);
+		info.setSilverGoal(Integer.parseInt(silverGoal.getText().toString()));
+		
+		EditText bronzeGoal = (EditText)findViewById(R.id.bronzeGoal);
+		info.setBronzeGoal(Integer.parseInt(bronzeGoal.getText().toString()));		
 				
 		// Communicate with database
 		Match m = Match.getInstance();

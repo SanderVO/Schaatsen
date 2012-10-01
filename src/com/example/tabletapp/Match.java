@@ -9,6 +9,8 @@ public class Match implements Runnable {
 	private Connection conn;
 	private Information info;	
 	private ArrayList<Time> times;
+	private int bestLapTime = 0;
+	private int currentTime;
 	
 	private Match() {
 		this.times = new ArrayList<Time>();
@@ -43,7 +45,20 @@ public class Match implements Runnable {
 	}		
 	
 	private void newTime(String line) {
-		times.add(new Time(line));			
+		Time roundTime = new Time(line);		
+		times.add(roundTime);
+		currentTime = roundTime.getRoundTime();
+		if (roundTime.getTotalMeters() < 400)
+			checkMatchTimes(roundTime);
+	}
+	
+	private void checkMatchTimes(Time roundTime) {		
+		if(bestLapTime != 0) {
+			if(roundTime.getRoundTime() < bestLapTime)
+				bestLapTime = roundTime.getRoundTime();
+		}
+		else
+			bestLapTime = roundTime.getRoundTime();		
 	}
 	
 	public ArrayList<Time> getTimes() {
@@ -57,6 +72,14 @@ public class Match implements Runnable {
 	public Information getInfo() {
 		return info;
 	}		
+	
+	public int getBestLapTime() {
+		return bestLapTime;
+	}
+	
+	public int getCurrentTime() {
+		return currentTime;
+	}
 		
 	/**
 	 * Round time information
