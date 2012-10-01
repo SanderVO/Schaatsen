@@ -11,6 +11,7 @@ public class Match implements Runnable {
 	private ArrayList<Time> times;
 	private int bestLapTime = 0;
 	private int currentTime;
+	private boolean finished = false;
 	
 	private Match() {
 		this.times = new ArrayList<Time>();
@@ -37,8 +38,10 @@ public class Match implements Runnable {
 		// Listen for response
 		String line;    			
 		while ((line = conn.readLine()) != null) {
-			if (line.equals("#"))
+			if (line.equals("#")) {
+				finished = true;
 				break;				
+			}
 			if (line.split(" ").length == 4)
 				newTime(line);			
 		}				
@@ -58,6 +61,10 @@ public class Match implements Runnable {
 			info.setLane(false);
 		else
 			info.setLane(true);
+	}
+	
+	public boolean getFinished() {
+		return finished;
 	}
 	
 	private void checkMatchTimes(Time roundTime) {		

@@ -17,9 +17,15 @@ public class MainActivity extends Activity {
 	    setContentView(R.layout.mainview);
 		backbuttonenable();
 		match = Match.getInstance();
-		showCurrentTime();
-		showBestTime();
-		showLane();
+		showTimes();
+	}
+	
+	private void showTimes() {
+		while(!match.getFinished()) {
+			showCurrentTime();
+			showBestTime();
+			showLane();
+		}
 	}
 	
 	private void showCurrentTime() {
