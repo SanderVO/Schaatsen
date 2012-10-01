@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
 		match = Match.getInstance();
 		showCurrentTime();
 		showBestTime();
+		showLane();
 	}
 	
 	private void showCurrentTime() {
