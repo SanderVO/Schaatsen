@@ -48,8 +48,16 @@ public class Match implements Runnable {
 		Time roundTime = new Time(line);		
 		times.add(roundTime);
 		currentTime = roundTime.getRoundTime();
+		checkCurrentLane();
 		if (roundTime.getTotalMeters() < 400)
 			checkMatchTimes(roundTime);
+	}
+	
+	private void checkCurrentLane() {
+		if(info.getLane())
+			info.setLane(false);
+		else
+			info.setLane(true);
 	}
 	
 	private void checkMatchTimes(Time roundTime) {		

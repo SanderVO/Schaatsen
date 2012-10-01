@@ -9,6 +9,7 @@ public class Information {
 	private int goldenGoal;
 	private int silverGoal;
 	private int bronzeGoal;
+	private boolean lane = true;
 	
 	public Information() {
 	}	
@@ -64,6 +65,12 @@ public class Information {
 	}
 	public void setBronzeGoal(int bronzeGoal) {
 		this.bronzeGoal = bronzeGoal;
+	}
+	public void setLane(boolean lane) {
+		this.lane = lane;
+	}
+	public boolean getLane() {
+		return lane;
 	}
 
 	@Override
