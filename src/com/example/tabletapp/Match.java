@@ -95,6 +95,52 @@ public class Match implements Runnable {
 	public int getCurrentTime() {
 		return currentTime;
 	}
+	
+	public int getGoalTime(int place) {
+		if(place == 1) {
+			return info.getGoldenGoal();
+		} 
+		else if (place == 2) {
+			return info.getSilverGoal();
+		}
+		else {
+			return info.getBronzeGoal();
+		}
+	}
+	
+	public String createMatchTime(int milliseconds)
+	{
+		int totalSeconds = milliseconds / 1000;
+		int minutes = totalSeconds / 60;
+		int seconds = totalSeconds % 60;
+		int hundreds;
+		hundreds = milliseconds - (minutes * 60 * 1000) - (seconds * 1000);
+		String returnString = "";
+		if (minutes < 10) {
+			returnString += "0" + minutes;
+		}
+		else {
+			returnString += minutes;
+		}
+		returnString += ":";
+		if (seconds < 10) {
+			returnString += "0" + seconds;
+		}
+		else {
+			returnString += seconds;
+		}
+		returnString += ":";
+		if (hundreds < 10) {
+			returnString += "0" + hundreds;
+		}
+		else if (hundreds > 100) {
+			returnString += new Integer(hundreds).toString().substring(0, 2);
+		}
+		else {
+			returnString += hundreds;
+		}
+		return returnString;
+	}
 		
 	/**
 	 * Round time information
