@@ -32,13 +32,6 @@ public class GoalActivity extends Activity {
 		this.switchGoals();
 		this.showRaceGoal();
 	}
-	
-	@Override
-	public void onResume()
-	{
-		super.onResume();
-		this.showRaceGoal();
-	}
 		
 	public void showRaceGoal() {
 		Match match = Match.getInstance();

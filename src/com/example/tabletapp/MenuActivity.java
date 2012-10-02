@@ -35,6 +35,14 @@ public class MenuActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		Button buttongraph = (Button) findViewById(R.id.graph);
+		buttongraph.setOnClickListener(new Button.OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MenuActivity.this, GraphActivity.class);
+				startActivity(intent);
+			}
+		});
 		Button buttonraceinfo = (Button) findViewById(R.id.raceinfo);
 		buttonraceinfo.setOnClickListener(new Button.OnClickListener(){
 			@Override
