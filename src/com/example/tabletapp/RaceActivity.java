@@ -29,15 +29,14 @@ public class RaceActivity extends Activity {
 	// Button Init
 	private void initButtons() {		
 		ImageButton buttonback = (ImageButton)findViewById(R.id.back);
-		Button buttonsubmit = (Button)findViewById(R.id.submitcontrol);
 		
-		if (buttonback == null || buttonsubmit == null)
+		if (buttonback == null)
 			return;
 		
 		buttonback.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(RaceActivity.this, MenuActivity.class);
-				startActivity(i);				
+				startActivity(i);
 			}
 		});
 	}
