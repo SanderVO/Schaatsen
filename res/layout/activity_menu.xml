@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/main"
+        android:layout_below="@+id/goal"
         android:text="Graph" />
 
     <Button
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/goal"
+        android:layout_below="@+id/graph"
         android:text="Race info" />
 
     <Button

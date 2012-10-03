@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".RaceActivity"></activity>
 		<activity android:name=".GoalActivity"></activity>
+		<activity android:name=".GraphActivity"></activity>
+        <activity android:name="org.achartengine.GraphicalActivity" />
 >>>>>>> 1f39d43377b457295feda405c0583efa274e409c
     </application>
 

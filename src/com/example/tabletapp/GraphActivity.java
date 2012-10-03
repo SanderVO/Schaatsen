@@ -29,23 +29,24 @@ public class GraphActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.backbuttonenable();
-		Intent i = ChartFactory.getTimeChartIntent(this, getDemoDataset(), getDemoRenderer(), null);
+		Intent i = ChartFactory.getTimeChartIntent(this, getDataset(), getDemoRenderer(), null);
+		startActivity(i);
 	}
 	
-  private XYMultipleSeriesDataset getDemoDataset() {
+  private XYMultipleSeriesDataset getDataset() {
     XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
     final int nr = 10;
     Random r = new Random();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 2; i++) {
       XYSeries series = new XYSeries("Demo series " + (i + 1));
       for (int k = 0; k < nr; k++) {
-        series.add(k, 20 + r.nextInt() % 100);
+        series.add(20 + r.nextInt() % 100, k);
       }
       dataset.addSeries(series);
     }
     return dataset;
   }
-  
+   
   private XYMultipleSeriesRenderer getDemoRenderer() {
     XYMultipleSeriesRenderer renderer = new XYMultipleSeriesRenderer();
     renderer.setAxisTitleTextSize(16);
