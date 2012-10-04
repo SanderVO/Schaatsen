@@ -40,13 +40,13 @@ public class MainActivity extends Activity {
 	private void showCurrentTime() {
 		Match match = Match.getInstance();
 		TextView currentTime = (TextView) findViewById(R.id.textView1); 
-		currentTime.setText(Integer.toString(match.getCurrentTime()));
+		currentTime.setText(match.createMatchTime(match.getCurrentTime()));
 	}
 	
 	private void showBestTime() {
 		Match match = Match.getInstance();
 		TextView bestTime = (TextView) findViewById(R.id.TextView03); 
-		bestTime.setText(Integer.toString(match.getBestLapTime()));
+		bestTime.setText(match.createMatchTime(match.getBestLapTime()));
 	}
 	
 	private void showCurrentDistance() {
