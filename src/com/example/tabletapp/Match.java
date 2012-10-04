@@ -11,6 +11,8 @@ public class Match implements Runnable {
 	private ArrayList<Time> times;
 	private int bestLapTime = 0;
 	private int currentTime;
+	private int currentDistance;
+	private int roundNumber;
 	private boolean finished = false;
 	
 	private Match() {
@@ -51,8 +53,10 @@ public class Match implements Runnable {
 		Time roundTime = new Time(line);		
 		times.add(roundTime);
 		currentTime = roundTime.getRoundTime();
+		currentDistance = roundTime.getTotalMeters();
+		roundNumber = roundTime.getRoundNumber();
 		checkCurrentLane();
-		if (roundTime.getTotalMeters() < 400)
+		if (roundTime.getTotalMeters() >= 400)
 			checkMatchTimes(roundTime);
 	}
 	
@@ -94,6 +98,18 @@ public class Match implements Runnable {
 	
 	public int getCurrentTime() {
 		return currentTime;
+	}
+	
+	public int getCurrentDistance() {
+		return currentDistance;
+	}
+	
+	public int getRoundNumber() {
+		return roundNumber;
+	}
+	
+	public int getTotalRounds() {
+		return getInfo().getDistance() / 400;
 	}
 	
 	public int getGoalTime(int place) {
