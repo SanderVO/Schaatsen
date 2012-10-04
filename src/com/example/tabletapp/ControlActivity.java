@@ -3,6 +3,7 @@ package com.example.tabletapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +40,11 @@ public class ControlActivity extends Activity {
 	
 	private void postForm() {
 
+		if (!checkForm()) {
+			Log.i("ControlActivity","Form invalid");
+			return;
+		}	
+		
 		// Make new information instance
 		Information info = new Information();
 
@@ -69,7 +75,48 @@ public class ControlActivity extends Activity {
 		new Thread(m).start();
 		
 		Intent intent = new Intent(ControlActivity.this, MainActivity.class);
-		startActivity(intent);
+		startActivity(intent);		
+	}
+	
+	private boolean checkForm() {
 		
+		EditText racerName = (EditText)findViewById(R.id.racerName);
+		if (racerName.getText().toString().equals(null))
+			return false;
+		
+		EditText distance = (EditText)findViewById(R.id.distance);
+		if (!checkInt(distance.getText().toString()))
+			return false;
+		
+		EditText opponent = (EditText)findViewById(R.id.opponent);
+		if (opponent.getText().toString().equals(null))
+			return false;
+				
+		EditText description = (EditText)findViewById(R.id.description);
+		if (description.getText().toString().equals(null))
+			return false;
+		
+		EditText goldGoal = (EditText)findViewById(R.id.goldGoal);
+		if (!checkInt(goldGoal.getText().toString()))
+			return false;
+		
+		EditText silverGoal = (EditText)findViewById(R.id.silverGoal);
+		if (!checkInt(silverGoal.getText().toString()))
+			return false;
+		
+		EditText bronzeGoal = (EditText)findViewById(R.id.bronzeGoal);
+		if (!checkInt(bronzeGoal.getText().toString()))
+			return false;
+		
+		return true;		
+	}
+	
+	private boolean checkInt(String in) {
+	    try {
+	        Integer.parseInt(in);
+	    } catch(Exception e) {
+	    	return false;
+	    }
+	    return true;		
 	}
 }
