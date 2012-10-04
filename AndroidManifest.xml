@@ -12,37 +12,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         
-        <activity
-            android:name=".MenuActivity"
-            android:label="@string/title_activity_menu" >
+        <activity android:name=".ControlActivity"
+        android:label="@string/app_name"  >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        
-        <activity android:name=".ControlActivity" >
         </activity>
         
         <activity android:name=".MainActivity"></activity>
-        
-        <activity android:name=".RaceActivity"></activity>
-        
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".RaceActivity"></activity>
 		<activity android:name=".GoalActivity"></activity>
 		<activity android:name=".GraphActivity"></activity>
         <activity android:name="org.achartengine.GraphicalActivity" />
->>>>>>> 1f39d43377b457295feda405c0583efa274e409c
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
