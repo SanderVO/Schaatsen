@@ -33,12 +33,12 @@ public class GoalActivity extends Activity {
 	public void showRaceGoal() {
 		Match match = Match.getInstance();
 		
-		//int currentTime = match.getCurrentTime();
+		int currentTime = match.getCurrentTime();
 		//Log.i("GoalActivity", Integer.toString(currentTime));
-		//int goalTime = match.getGoalTime(this.goal);
-		Random random = new Random();
-		int currentTime = random.nextInt(999999);
-		int goalTime = random.nextInt(999999);
+		int goalTime = match.getGoalTime(this.goal);
+		//Random random = new Random();
+		//int currentTime = random.nextInt(999999);
+		//int goalTime = random.nextInt(999999);
 		int differenceTime = goalTime - currentTime;
 		
 		TextView currentTimeView = (TextView) findViewById(R.id.textView1);
