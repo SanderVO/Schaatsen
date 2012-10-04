@@ -1,7 +1,7 @@
 package com.example.tabletapp;
 
-import java.util.ArrayList;
 import android.util.Log;
+import java.util.ArrayList;
 
 public class Match implements Runnable {
 
