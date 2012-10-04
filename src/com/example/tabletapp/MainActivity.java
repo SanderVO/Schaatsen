@@ -1,23 +1,40 @@
 package com.example.tabletapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
+	 
+	private Handler mHandler;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.mainview);
-		backbuttonenable();
-		showCurrentTime();
-		showBestTime();
-	}
+	    backbuttonenable();
+	    mHandler = new Handler();
+        mHandler.post(mUpdate);
+
+						
 	
+	}	
+	private Runnable mUpdate = new Runnable() {
+		   public void run() {
+
+			   showCurrentTime();
+			   showBestTime();
+			   showLane();
+		       mHandler.postDelayed(this, 1000);
+
+		    }
+	};
+
 	private void showCurrentTime() {
 		Match match = Match.getInstance();
 		TextView currentTime = (TextView) findViewById(R.id.textView1); 
@@ -30,13 +47,27 @@ public class MainActivity extends Activity {
 		bestTime.setText(Integer.toString(match.getBestLapTime()));
 	}
 	
+	private void showLane() {
+		Match match = Match.getInstance();
+		TextView lane = (TextView) findViewById(R.id.TextView05);
+		String currentLane;
+		if(match.getInfo().getLane())
+			currentLane = "Inner";
+		else
+			currentLane = "Outer";
+		
+		lane.setText(currentLane);
+	}
+	
+	
 	public void backbuttonenable(){
 		if(findViewById(R.id.back)!=null){
 			ImageButton buttonback = (ImageButton) findViewById(R.id.back);
 			buttonback.setOnClickListener(new Button.OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					setContentView(R.layout.activity_menu);
+					Intent i = new Intent(MainActivity.this, MenuActivity.class);
+					startActivity(i);
 				}
 			});
 		}

@@ -9,6 +9,7 @@ public class Information {
 	private int goldenGoal;
 	private int silverGoal;
 	private int bronzeGoal;
+	private boolean lane;
 	
 	public Information() {
 	}	
@@ -66,6 +67,14 @@ public class Information {
 		this.bronzeGoal = bronzeGoal;
 	}
 
+	public void setLane(boolean lane) {
+		this.lane = lane;
+	}
+	public boolean getLane() {
+		return lane;
+	}
+	
+	
 	@Override
 	public String toString() {
 		return "Information [racerName=" + racerName + ", opponentName="

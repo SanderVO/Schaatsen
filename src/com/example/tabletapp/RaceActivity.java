@@ -28,10 +28,8 @@ public class RaceActivity extends Activity {
 	
 	// Button Init
 	private void initButtons() {		
-		ImageButton buttonback = (ImageButton)findViewById(R.id.back);
-		Button buttonsubmit = (Button)findViewById(R.id.submitcontrol);
-		
-		if (buttonback == null || buttonsubmit == null)
+		ImageButton buttonback = (ImageButton)findViewById(R.id.back);		
+		if (buttonback == null)
 			return;
 		
 		buttonback.setOnClickListener(new Button.OnClickListener() {

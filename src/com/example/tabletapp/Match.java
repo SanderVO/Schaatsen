@@ -44,10 +44,11 @@ public class Match implements Runnable {
 		}				
 	}		
 	
-	private void newTime(String line) {
+	private void newTime(String line) {		
 		Time roundTime = new Time(line);		
 		times.add(roundTime);
 		currentTime = roundTime.getRoundTime();
+		checkCurrentLane();
 		if (roundTime.getTotalMeters() < 400)
 			checkMatchTimes(roundTime);
 	}
@@ -60,6 +61,14 @@ public class Match implements Runnable {
 		else
 			bestLapTime = roundTime.getRoundTime();		
 	}
+	
+	private void checkCurrentLane() {
+		if(info.getLane())
+			info.setLane(false);
+		else
+			info.setLane(true);
+	}
+	
 	
 	public ArrayList<Time> getTimes() {
 		return times;
