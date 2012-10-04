@@ -8,7 +8,7 @@ import java.net.Socket;
 
 class Connection {
 
-	private final static String HOST = "145.37.56.30";
+	private final static String HOST = "82.73.151.154";
 	private final static int PORT = 9923;
 	
 	private Socket sock;	

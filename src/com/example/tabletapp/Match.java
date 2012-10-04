@@ -158,7 +158,7 @@ public class Match implements Runnable {
 	/**
 	 * Round time information
 	 */
-	private class Time {
+	public class Time {
 		
 		private int roundNumber;
 		private int roundTime;
