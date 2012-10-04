@@ -108,13 +108,13 @@ public class Match implements Runnable {
 		}
 	}
 	
-	public String createMatchTime(int milliseconds)
+	public String createMatchTime(int hundreds)
 	{
-		int totalSeconds = milliseconds / 1000;
+		int totalSeconds = hundreds / 100;
 		int minutes = totalSeconds / 60;
 		int seconds = totalSeconds % 60;
-		int hundreds;
-		hundreds = milliseconds - (minutes * 60 * 1000) - (seconds * 1000);
+
+		hundreds = hundreds - (minutes * 60 * 100) - (seconds * 100);
 		String returnString = "";
 		if (minutes < 10) {
 			returnString += "0" + minutes;
@@ -132,9 +132,6 @@ public class Match implements Runnable {
 		returnString += ":";
 		if (hundreds < 10) {
 			returnString += "0" + hundreds;
-		}
-		else if (hundreds > 100) {
-			returnString += new Integer(hundreds).toString().substring(0, 2);
 		}
 		else {
 			returnString += hundreds;
