@@ -71,8 +71,8 @@ public class Information {
 	}
 	public boolean getLane() {
 		return lane;
-	}
-
+	}	
+	
 	@Override
 	public String toString() {
 		return "Information [racerName=" + racerName + ", opponentName="

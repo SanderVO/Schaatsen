@@ -6,14 +6,11 @@ package com.example.tabletapp;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import java.util.Random;
 
 /**
@@ -32,23 +29,16 @@ public class GoalActivity extends Activity {
 		this.switchGoals();
 		this.showRaceGoal();
 	}
-	
-	@Override
-	public void onResume()
-	{
-		super.onResume();
-		this.showRaceGoal();
-	}
 		
 	public void showRaceGoal() {
 		Match match = Match.getInstance();
 		
-		//int currentTime = match.getCurrentTime();
+		int currentTime = match.getCurrentTime();
 		//Log.i("GoalActivity", Integer.toString(currentTime));
-		//int goalTime = match.getGoalTime(this.goal);
-		Random random = new Random();
-		int currentTime = random.nextInt(999999);
-		int goalTime = random.nextInt(999999);
+		int goalTime = match.getGoalTime(this.goal);
+		//Random random = new Random();
+		//int currentTime = random.nextInt(999999);
+		//int goalTime = random.nextInt(999999);
 		int differenceTime = goalTime - currentTime;
 		
 		TextView currentTimeView = (TextView) findViewById(R.id.textView1);

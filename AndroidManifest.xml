@@ -23,6 +23,8 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".RaceActivity"></activity>
 		<activity android:name=".GoalActivity"></activity>
+		<activity android:name=".GraphActivity"></activity>
+        <activity android:name="org.achartengine.GraphicalActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -1,44 +1,54 @@
 package com.example.tabletapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	 
+	private Handler mHandler;
 	
-	private Match match;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.mainview);
-		backbuttonenable();
-		match = Match.getInstance();
-		showTimes();
-	}
+	    backbuttonenable();
+	    mHandler = new Handler();
+        mHandler.post(mUpdate);
+
+						
 	
-	private void showTimes() {
-		while(!match.getFinished()) {
-			showCurrentTime();
-			showBestTime();
-			showLane();
-		}
-	}
-	
+	}	
+	private Runnable mUpdate = new Runnable() {
+		   public void run() {
+
+			   showCurrentTime();
+			   showBestTime();
+			   showLane();
+		       mHandler.postDelayed(this, 1000);
+
+		    }
+	};
+
 	private void showCurrentTime() {
+		Match match = Match.getInstance();
 		TextView currentTime = (TextView) findViewById(R.id.textView1); 
 		currentTime.setText(Integer.toString(match.getCurrentTime()));
 	}
 	
 	private void showBestTime() {
+		Match match = Match.getInstance();
 		TextView bestTime = (TextView) findViewById(R.id.TextView03); 
 		bestTime.setText(Integer.toString(match.getBestLapTime()));
 	}
 	
 	private void showLane() {
+		Match match = Match.getInstance();
 		TextView lane = (TextView) findViewById(R.id.TextView05);
 		String currentLane;
 		if(match.getInfo().getLane())
@@ -49,16 +59,17 @@ public class MainActivity extends Activity {
 		lane.setText(currentLane);
 	}
 	
+	
 	public void backbuttonenable(){
 		if(findViewById(R.id.back)!=null){
 			ImageButton buttonback = (ImageButton) findViewById(R.id.back);
 			buttonback.setOnClickListener(new Button.OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					setContentView(R.layout.activity_menu);
+					Intent i = new Intent(MainActivity.this, MenuActivity.class);
+					startActivity(i);
 				}
 			});
 		}
 	}
-
 }

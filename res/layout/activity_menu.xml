@@ -22,12 +22,21 @@
         android:text="Goal" />
 
     <Button
-        android:id="@+id/raceinfo"
+        android:id="@+id/graph"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/goal"
+        android:text="Graph" />
+
+    <Button
+        android:id="@+id/raceinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/graph"
         android:text="Race info" />
         
     <TextView
