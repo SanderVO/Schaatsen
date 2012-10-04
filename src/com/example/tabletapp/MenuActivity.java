@@ -42,15 +42,7 @@ public class MenuActivity extends Activity {
 				Intent i = new Intent(MenuActivity.this, RaceActivity.class);
 				startActivity(i);
 			}
-		});
-		Button buttoncontrol = (Button) findViewById(R.id.control);
-		buttoncontrol.setOnClickListener(new Button.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(MenuActivity.this, ControlActivity.class);
-				startActivity(i);					
-			}
-		});		
+		});	
 	}
 	
 	public void backbuttonenable(){
