@@ -69,8 +69,8 @@ public class GraphActivity extends Activity {
 	renderer.setYAxisMin(1000, 0);
 	renderer.setYAxisMax(4000, 0);
 	
-	renderer.setYAxisMin(1000, 1);
-	renderer.setYAxisMax(24000, 1);
+	renderer.setYAxisMin(0, 1);
+	renderer.setYAxisMax(12000, 1);
 	
   	renderer.addYTextLabel(1000, "00:10:00",0);
 	renderer.addYTextLabel(1500, "00:15:00",0);
@@ -94,6 +94,7 @@ public class GraphActivity extends Activity {
 	renderer.addYTextLabel(12000, "02:00:00", 1);
 	
 	if(match.getInfo().getDistance() > 1500) {
+		renderer.setYAxisMax(24000, 1);
 		renderer.addYTextLabel(13000, "02:10:00", 1);
 		renderer.addYTextLabel(14000, "02:20:00", 1);
 		renderer.addYTextLabel(15000, "02:30:00", 1);
