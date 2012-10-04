@@ -46,7 +46,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="@android:dimen/app_icon_size" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/imageView1"
             android:layout_width="163dp"
             android:layout_height="38dp"
