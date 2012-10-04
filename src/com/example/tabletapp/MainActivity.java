@@ -30,6 +30,8 @@ public class MainActivity extends Activity {
 			   showCurrentTime();
 			   showBestTime();
 			   showLane();
+			   showCurrentDistance();
+			   showCurrentRoundNumber();
 		       mHandler.postDelayed(this, 1000);
 
 		    }
@@ -45,6 +47,18 @@ public class MainActivity extends Activity {
 		Match match = Match.getInstance();
 		TextView bestTime = (TextView) findViewById(R.id.TextView03); 
 		bestTime.setText(Integer.toString(match.getBestLapTime()));
+	}
+	
+	private void showCurrentDistance() {
+		Match match = Match.getInstance();
+		TextView currentDistance = (TextView) findViewById(R.id.TextView08);
+		currentDistance.setText(Integer.toString(match.getCurrentDistance()));
+	}
+	
+	private void showCurrentRoundNumber() {
+		Match match = Match.getInstance();
+		TextView currentRound = (TextView) findViewById(R.id.roundNumber);
+		currentRound.setText(Integer.toString(match.getRoundNumber()) + "/" + Integer.toString(match.getTotalRounds()));
 	}
 	
 	private void showLane() {
